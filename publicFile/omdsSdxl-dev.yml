@@ -1,3 +1,9 @@
+#当前配置所属环境  
+currentEnvironment: dev
+
+#指定程序的启动端口  
+server:
+  port: 8904
 #oracle数据库
 jdbc:
   type: oracle
