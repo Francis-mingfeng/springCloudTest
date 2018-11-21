@@ -1,5 +1,5 @@
 #当前配置所属环境  
-currentEnvironment: dev
+currentEnvironment: dev2028
 
 #指定程序的启动端口  
 server:
