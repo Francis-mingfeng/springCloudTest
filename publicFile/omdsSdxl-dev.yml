@@ -1,19 +1,30 @@
-#指定程序的启动端口  
-server:
-  port: 8804
-
-#指定使用的环境配置文件、程序名
-spring:
-  profiles:
-    active: dev
-  application: 
-    name: omdsSdxl
-
 #指定eureka服务注册地址  
-eureka: 
+eureka:
   client:
-    serviceUrl: 
-      defaultZone: http://localhost:8901/eureka
+    service-url:
+      defaultZone: http://localhost:8901/eureka  
+
+#oracle数据库
+jdbc:
+  type: oracle
+  driverClassName: oracle.jdbc.driver.OracleDriver
+  driver: oracle.jdbc.driver.OracleDriver
+  url: jdbc\:oracle\:thin\:@localhost\:1521\:orcl
+  username: eoms
+  password: javaWMF123
+
+#pool settings
+jdbc: 
+  pool: 
+    init: 2
+    minIdle: 2
+    maxActive: 10
+  testSql: SELECT 'x' FROM DUAL
+
+#变量   
+adminPath: /omdsSdxl
+frontPath: /f
+urlSuffix: .html
 
 #mybatis config
 mybatis: 
@@ -24,5 +35,14 @@ mybatis:
 logging:
   level:
      com.jydw.sdxl : debug  
-#变量
-foo: omdsSdxl-dev配置文件     
+
+#上传图片地址
+uploadpath: D://jyspWorkspaces/jysp_web/src/main/resources/static/imgupload/
+
+#分页配置
+page.pageSize: 15
+pagehelper: 
+  helper-dialect: oracle
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
