@@ -9,7 +9,7 @@ jdbc:
   type: oracle
   driverClassName: oracle.jdbc.driver.OracleDriver
   driver: oracle.jdbc.driver.OracleDriver
-  url: jdbc\:oracle\:thin\:@localhost\:1521\:orcl
+  url: jdbc:oracle:thin:@localhost:1521:orcl
   username: eoms
   password: javaWMF123
   testSql: SELECT 'x' FROM DUAL
