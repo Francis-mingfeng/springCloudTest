@@ -6,14 +6,11 @@ jdbc:
   url: jdbc\:oracle\:thin\:@localhost\:1521\:orcl
   username: eoms
   password: javaWMF123
-
-#pool settings
-jdbc: 
+  testSql: SELECT 'x' FROM DUAL
   pool: 
     init: 2
     minIdle: 2
     maxActive: 10
-  testSql: SELECT 'x' FROM DUAL
 
 #变量   
 adminPath: /omdsSdxl
@@ -28,13 +25,15 @@ mybatis:
 #日志
 logging:
   level:
-     com.jydw.sdxl : debug  
+     com.jydw.sdxl: debug  
 
 #上传图片地址
 uploadpath: D://jyspWorkspaces/jysp_web/src/main/resources/static/imgupload/
 
 #分页配置
-page.pageSize: 15
+page:
+    pageSize: 15
+#   
 pagehelper: 
   helper-dialect: oracle
   reasonable: true
